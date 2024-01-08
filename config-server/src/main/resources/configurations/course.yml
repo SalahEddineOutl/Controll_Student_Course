@@ -1,0 +1,33 @@
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+
+server:
+  port: 8070
+spring:
+  application:
+    name: schools
+  datasource:
+    #driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:postgres://pg-2c6fb227-soutliou-0f4b.a.aivencloud.com:18963/schools
+    username: avnadmin
+    password: AVNS_1L32ylZkRdf91G7jnWm
+  jpa:
+    hibernate:
+      ddl-auto: update
+      format_sql: true
+    database: postgres
+    dialect: org.hibernate.dialect.MySQL8Dialect
+
+application:
+  config:
+    students-url: http://localhost:8222/api/v1/students
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0
